@@ -99,3 +99,6 @@ The dataset is organized in the Dataset folder with separate test and train dire
 ## **Conclusion**
 The mushroom classification project utilizes deep learning and transfer learning techniques to build an accurate and efficient classification system. By leveraging pre-trained models and a comprehensive mushroom dataset, we aim to contribute to the field of mushroom recognition and promote the understanding of mushroom species diversity in different regions.
 
+
+# AI-Mushroom-Classification-Analysis
+Uncovering the Hidden Treasures of the Mushroom Kingdom: A Classification Analysis
