@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Mushroom Classification</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 5%;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://champimignons.com/cdn/shop/files/champimignons_-_hero_2_800x401_crop_center.jpg?v=1660084987') no-repeat center center fixed;
+      background-size: cover;
+      transform: scaleX(-1); /* flips the image */
+      z-index: -1;
+    }
+
+    .content {
+      max-width: 550px;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      white-space: nowrap; /* Prevent line break */
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 500;
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #ddd;
+      line-height: 2;
+      margin-bottom: 30px;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      border: 1.5px solid gold;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 22px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      .content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>AI MUSHROOM CLASSIFICATION</h1>
+    <h2>Discover the Power of Deep Learning & Nature</h2>
+    <p>Our AI model classifies mushrooms into Boletus, Lactarius, and Russula using deep learning techniques. Dive into the fungal kingdom with precision and speed.</p>
+    <a href="{{ url_for('predict_page') }}" class="button">Start Detection</a>
+  </div>
+</body>
+</html>

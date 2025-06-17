@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mushroom Classification</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      height: 100vh;
+      background: url('https://champimignons.com/cdn/shop/files/champimignons_-_hero_2_800x401_crop_center.jpg?v=1660084987') no-repeat center center fixed;
+      background-size: cover;
+      background-position: right center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5%;
+      color: white;
+    }
+
+    .upload-container {
+      display: flex;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 1100px;
+      gap: 40px;
+    }
+
+    form.upload-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    form.upload-form h3 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .file-label,
+    #button-31 {
+      display: block;
+      width: fit-content;
+      margin-top: 15px;
+      background: #5a3d2b; /* earthy brown based on mushroom image */
+      border: 1.5px solid gold;
+      color: white;
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .file-label:hover,
+    #button-31:hover {
+      background-color: #4b3223;
+      transform: scale(1.05);
+    }
+
+    #file_upload {
+      display: none;
+    }
+
+    .preview {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #image-preview {
+      max-width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      margin-bottom: 15px;
+    }
+
+    #result {
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .upload-container {
+        flex-direction: column;
+        padding: 30px;
+      }
+
+      form.upload-form h3 {
+        font-size: 20px;
+      }
+
+      .file-label,
+      #button-31 {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="upload-container">
+    <form action="/Mushroom-classification-predict" method="post" enctype="multipart/form-data" class="upload-form">
+      <h3>Upload a Mushroom Image to Classify</h3>
+      <input type="file" name="image_file" id="file_upload">
+      <label for="file_upload" class="file-label">Select Mushroom Image</label>
+      <button type="submit" id="button-31">Predict</button>
+    </form>
+
+    <div class="preview">
+      <img id="image-preview" />
+      {% if prediction %}
+        <div id="result">The Mushroom is = {{ prediction }}</div>
+      {% endif %}
+    </div>
+  </div>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
